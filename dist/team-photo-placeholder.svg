@@ -1,0 +1,12 @@
+<svg width="400" height="500" viewBox="0 0 400 500" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#EFF6FF"/>
+      <stop offset="100%" stop-color="#BFDBFE"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <circle cx="200" cy="190" r="70" fill="#93C5FD"/>
+  <rect x="100" y="280" width="200" height="160" rx="40" fill="#93C5FD"/>
+  <text x="200" y="470" font-family="Kanit, sans-serif" font-size="16" fill="#1D4ED8" text-anchor="middle" font-weight="500">REPLACE WITH TEAM PHOTO</text>
+</svg>
