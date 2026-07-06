@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import Lenis from 'lenis';
 import HeroSection from './components/HeroSection';
 import VideoScrollSection from './components/VideoScrollSection';
-import MarqueeSection from './components/MarqueeSection';
+import ScrollVideoSection from './components/ScrollVideoSection';
 import AboutSection from './components/AboutSection';
 import ServicesSection from './components/ServicesSection';
 import ContactSection from './components/ContactSection';
@@ -32,7 +32,7 @@ export default function App() {
     <div className="main-wrapper">
       <HeroSection />
       <VideoScrollSection />
-      <MarqueeSection />
+      <ScrollVideoSection />
       <AboutSection />
       <ServicesSection />
       <ContactSection />

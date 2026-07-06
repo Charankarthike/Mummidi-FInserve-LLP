@@ -31,8 +31,6 @@ export default function VideoScrollSection() {
   const labelY       = useTransform(smoothProgress, [0.35, 0.55], [30, 0]);
   const labelOpacity = useTransform(smoothProgress, [0.35, 0.55], [0, 1]);
 
-  // Floating badge parallax
-  const badgeY = useTransform(smoothProgress, [0, 1], [-20, 30]);
 
   // Scroll cue fade
   const cueOpacity = useTransform(smoothProgress, [0, 0.2], [1, 0]);
@@ -59,16 +57,7 @@ export default function VideoScrollSection() {
         </h2>
       </motion.div>
 
-      {/* Floating badge — parallaxes independently */}
-      <motion.div
-        style={{ y: badgeY }}
-        className="absolute top-16 right-[8%] sm:right-[12%] z-30 hidden sm:flex items-center gap-2 bg-white/80 backdrop-blur-md border border-[#0A2540]/10 rounded-full px-4 py-2 shadow-md"
-      >
-        <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-        <span className="text-[#0A2540] text-xs font-medium uppercase tracking-widest">
-          14+ years experience
-        </span>
-      </motion.div>
+
 
       {/* ── 3D Video Card ── */}
       <div className="relative w-full max-w-[900px] px-5 sm:px-8">
