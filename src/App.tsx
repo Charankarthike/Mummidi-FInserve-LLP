@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Lenis from 'lenis';
+import Navbar from './components/Navbar';
 import HeroSection from './components/HeroSection';
 import VideoScrollSection from './components/VideoScrollSection';
 import ScrollVideoSection from './components/ScrollVideoSection';
@@ -30,6 +31,7 @@ export default function App() {
 
   return (
     <div className="main-wrapper">
+      <Navbar />
       <HeroSection />
       <VideoScrollSection />
       <ScrollVideoSection />
