@@ -121,13 +121,9 @@ export default function AboutSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.6, duration: 0.6 }}
                 viewport={{ once: true }}
-                className="flex flex-col sm:flex-row gap-4"
               >
                 <button className="px-8 py-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white font-semibold rounded-xl hover:shadow-xl hover:shadow-amber-500/50 transition-all duration-300 transform hover:-translate-y-1">
                   Start Your Journey
-                </button>
-                <button className="px-8 py-4 bg-gray-800/80 backdrop-blur-sm text-white font-semibold rounded-xl border border-gray-700 hover:border-amber-500/50 transition-all duration-300">
-                  Learn More
                 </button>
               </motion.div>
             </motion.div>
