@@ -128,17 +128,16 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
               exit={{ opacity: 0, scale: 0.94, y: 16 }}
               transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-2xl my-8 rounded-[20px] md:rounded-[28px] overflow-hidden"
+              className="relative w-full max-w-2xl my-4 rounded-[20px] md:rounded-[24px] overflow-hidden"
               style={{
                 background:
                   'linear-gradient(160deg, #0D1B35 0%, #0A1628 60%, #08112A 100%)',
                 border: '1px solid rgba(255,255,255,0.12)',
                 boxShadow:
                   '0 40px 80px -20px rgba(0,0,0,0.7), 0 0 0 1px rgba(37,99,235,0.2), inset 0 1px 0 rgba(255,255,255,0.08)',
-                maxHeight: 'calc(100vh - 64px)',
               }}
             >
-              <div className="overflow-y-auto max-h-[calc(100vh-64px)] scrollbar-hide">
+              <div className="overflow-hidden">
               {/* Glow accent top */}
               <div
                 className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px pointer-events-none"
@@ -155,15 +154,15 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="p-5 sm:p-7 md:p-9"
+                    className="p-4 sm:p-5 md:p-6"
                   >
                     {/* Header */}
-                    <div className="flex items-start justify-between mb-5 md:mb-7">
+                    <div className="flex items-start justify-between mb-3 md:mb-4">
                       <div>
-                        <p className="text-[#60A5FA] text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] mb-1.5">
+                        <p className="text-[#60A5FA] text-[9px] sm:text-[10px] font-semibold uppercase tracking-[0.2em] mb-1">
                           Free · No obligation
                         </p>
-                        <h2 className="text-white font-black uppercase text-xl sm:text-2xl md:text-3xl leading-tight tracking-tight">
+                        <h2 className="text-white font-black uppercase text-lg sm:text-xl md:text-2xl leading-tight tracking-tight">
                           Book Free
                           <br />
                           Consultation
@@ -171,14 +170,14 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                       </div>
                       <button
                         onClick={handleClose}
-                        className="text-white/40 hover:text-white/80 transition-colors mt-1 p-1.5 rounded-full hover:bg-white/10"
+                        className="text-white/40 hover:text-white/80 transition-colors p-1 rounded-full hover:bg-white/10"
                       >
-                        <X size={20} />
+                        <X size={18} />
                       </button>
                     </div>
 
                     {/* Form */}
-                    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-3 md:gap-4">
+                    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-2 md:gap-2.5">
                       {/* Name */}
                       <Field label="Full Name *" error={errors.name} icon={<User size={15} />}>
                         <input
@@ -194,7 +193,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                       </Field>
 
                       {/* Phone + Email row */}
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-2.5">
                         <Field label="Mobile Number *" error={errors.phone} icon={<Phone size={15} />}>
                           <input
                             type="tel"
@@ -263,7 +262,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                           value={form.message}
                           onChange={handleChange}
                           placeholder="Tell us briefly about your financial goals…"
-                          rows={3}
+                          rows={2}
                           className={inputCls(false) + ' resize-none'}
                         />
                       </Field>
@@ -274,7 +273,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                         disabled={loading}
                         whileHover={{ scale: loading ? 1 : 1.02 }}
                         whileTap={{ scale: loading ? 1 : 0.98 }}
-                        className="mt-1 md:mt-2 w-full rounded-full text-white font-bold uppercase tracking-widest py-3 md:py-4 text-xs md:text-sm relative overflow-hidden"
+                        className="mt-1 w-full rounded-full text-white font-bold uppercase tracking-widest py-2.5 md:py-3 text-xs md:text-sm relative overflow-hidden"
                         style={{
                           background: loading
                             ? 'rgba(37,99,235,0.5)'
@@ -296,7 +295,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                         )}
                       </motion.button>
 
-                      <p className="text-center text-white/25 text-[10px] md:text-xs mt-1">
+                      <p className="text-center text-white/25 text-[9px] md:text-[10px] mt-0.5">
                         We'll call you within 24 hours · No spam, ever
                       </p>
                     </form>
@@ -384,8 +383,8 @@ function Field({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-1 md:gap-1.5">
-      <label className="text-white/50 text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-1.5">
+    <div className="flex flex-col gap-0.5 md:gap-1">
+      <label className="text-white/50 text-[9px] md:text-[10px] uppercase tracking-widest flex items-center gap-1">
         {icon && <span className="text-[#60A5FA]">{icon}</span>}
         {label}
       </label>
@@ -394,7 +393,7 @@ function Field({
         <motion.p
           initial={{ opacity: 0, y: -4 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-red-400 text-[10px] md:text-xs"
+          className="text-red-400 text-[9px] md:text-[10px]"
         >
           {error}
         </motion.p>
@@ -415,7 +414,7 @@ function LoadingSpinner() {
 /* ── Style helpers ──────────────────────────────────────────────────────────── */
 function inputCls(hasError: boolean) {
   return [
-    'w-full rounded-xl px-3 md:px-4 py-2.5 md:py-3 text-xs md:text-sm text-white placeholder-white/25 outline-none',
+    'w-full rounded-xl px-3 py-2 text-xs text-white placeholder-white/25 outline-none',
     'transition-all duration-200 font-light',
     hasError
       ? 'border border-red-500/60 bg-red-500/10 focus:border-red-400'
