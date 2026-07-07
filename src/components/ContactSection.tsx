@@ -118,7 +118,7 @@ export default function ContactSection() {
       <div className="bg-[#0A2540] px-5 sm:px-8 md:px-10 py-8">
         <div className="max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="Mummidi Finserve LLP" className="h-8 w-auto object-contain brightness-0 invert opacity-80" />
+            <img src="/logo.png" alt="Mummidi Finserve LLP" className="h-12 w-auto object-contain" />
             <span className="text-white/50 text-xs font-light">Building wealth, one family at a time.</span>
           </div>
           <p className="text-white/30 text-[10px] uppercase tracking-widest text-center sm:text-right">
