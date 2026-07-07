@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import FadeIn from './FadeIn';
 import { ContactButton } from './Buttons';
+import ConsultationModal from './ConsultationModal';
 import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 
 const CONTACT_ITEMS = [
@@ -34,8 +36,12 @@ const CONTACT_ITEMS = [
 ];
 
 export default function ContactSection() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
-    <section id="contact" className="overflow-hidden">
+    <>
+      <ConsultationModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
+      <section id="contact" className="overflow-hidden">
       {/* ── Dark top band ── */}
       <div className="bg-[#0A2540] px-5 sm:px-8 md:px-10 pt-20 sm:pt-28 pb-16 sm:pb-24 relative overflow-hidden">
         {/* Subtle bg decoration */}
@@ -71,7 +77,7 @@ export default function ContactSection() {
             <p className="text-white/55 font-light text-base sm:text-lg max-w-lg">
               No sales pressure, just honest guidance. Tell us your goals and we&apos;ll map out a plan within 24 hours.
             </p>
-            <ContactButton label="Book free consultation" />
+            <ContactButton label="Book free consultation" onClick={() => setIsModalOpen(true)} />
           </div>
         </FadeIn>
       </div>
@@ -121,5 +127,6 @@ export default function ContactSection() {
         </div>
       </div>
     </section>
+    </>
   );
 }
