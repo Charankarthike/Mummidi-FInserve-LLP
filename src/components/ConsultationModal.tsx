@@ -128,7 +128,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
               exit={{ opacity: 0, scale: 0.94, y: 16 }}
               transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-lg max-h-[90vh] overflow-y-auto rounded-[28px]"
+              className="relative w-full max-w-2xl max-h-[85vh] md:max-h-[90vh] overflow-y-auto rounded-[20px] md:rounded-[28px]"
               style={{
                 background:
                   'linear-gradient(160deg, #0D1B35 0%, #0A1628 60%, #08112A 100%)',
@@ -153,15 +153,15 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="p-7 sm:p-9"
+                    className="p-5 sm:p-7 md:p-9"
                   >
                     {/* Header */}
-                    <div className="flex items-start justify-between mb-7">
+                    <div className="flex items-start justify-between mb-5 md:mb-7">
                       <div>
-                        <p className="text-[#60A5FA] text-xs font-semibold uppercase tracking-[0.2em] mb-1.5">
+                        <p className="text-[#60A5FA] text-[10px] sm:text-xs font-semibold uppercase tracking-[0.2em] mb-1.5">
                           Free · No obligation
                         </p>
-                        <h2 className="text-white font-black uppercase text-2xl sm:text-3xl leading-tight tracking-tight">
+                        <h2 className="text-white font-black uppercase text-xl sm:text-2xl md:text-3xl leading-tight tracking-tight">
                           Book Free
                           <br />
                           Consultation
@@ -176,7 +176,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                     </div>
 
                     {/* Form */}
-                    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-4">
+                    <form onSubmit={handleSubmit} noValidate className="flex flex-col gap-3 md:gap-4">
                       {/* Name */}
                       <Field label="Full Name *" error={errors.name} icon={<User size={15} />}>
                         <input
@@ -192,7 +192,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                       </Field>
 
                       {/* Phone + Email row */}
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
                         <Field label="Mobile Number *" error={errors.phone} icon={<Phone size={15} />}>
                           <input
                             type="tel"
@@ -272,7 +272,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                         disabled={loading}
                         whileHover={{ scale: loading ? 1 : 1.02 }}
                         whileTap={{ scale: loading ? 1 : 0.98 }}
-                        className="mt-2 w-full rounded-full text-white font-bold uppercase tracking-widest py-4 text-sm relative overflow-hidden"
+                        className="mt-1 md:mt-2 w-full rounded-full text-white font-bold uppercase tracking-widest py-3 md:py-4 text-xs md:text-sm relative overflow-hidden"
                         style={{
                           background: loading
                             ? 'rgba(37,99,235,0.5)'
@@ -294,7 +294,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                         )}
                       </motion.button>
 
-                      <p className="text-center text-white/25 text-xs mt-1">
+                      <p className="text-center text-white/25 text-[10px] md:text-xs mt-1">
                         We'll call you within 24 hours · No spam, ever
                       </p>
                     </form>
@@ -306,7 +306,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                     initial={{ opacity: 0, scale: 0.95 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
-                    className="p-9 flex flex-col items-center justify-center text-center gap-5 min-h-[380px]"
+                    className="p-7 md:p-9 flex flex-col items-center justify-center text-center gap-4 md:gap-5 min-h-[320px] md:min-h-[380px]"
                   >
                     <button
                       onClick={handleClose}
@@ -321,17 +321,17 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                       transition={{ delay: 0.15, type: 'spring', stiffness: 200 }}
                     >
                       <CheckCircle
-                        size={64}
-                        className="text-[#60A5FA]"
+                        size={56}
+                        className="text-[#60A5FA] md:w-16 md:h-16"
                         style={{ filter: 'drop-shadow(0 0 20px rgba(96,165,250,0.5))' }}
                       />
                     </motion.div>
 
                     <div>
-                      <h3 className="text-white font-black uppercase text-2xl tracking-tight mb-2">
+                      <h3 className="text-white font-black uppercase text-xl md:text-2xl tracking-tight mb-2">
                         We'll be in touch!
                       </h3>
-                      <p className="text-white/50 text-sm leading-relaxed max-w-xs">
+                      <p className="text-white/50 text-xs md:text-sm leading-relaxed max-w-xs px-4">
                         Thanks, <span className="text-white/80">{form.name.split(' ')[0]}</span>. Our
                         advisor will call you at{' '}
                         <span className="text-[#60A5FA]">{form.phone}</span> within 24 hours.
@@ -381,8 +381,8 @@ function Field({
   children: React.ReactNode;
 }) {
   return (
-    <div className="flex flex-col gap-1.5">
-      <label className="text-white/50 text-xs uppercase tracking-widest flex items-center gap-1.5">
+    <div className="flex flex-col gap-1 md:gap-1.5">
+      <label className="text-white/50 text-[10px] md:text-xs uppercase tracking-widest flex items-center gap-1.5">
         {icon && <span className="text-[#60A5FA]">{icon}</span>}
         {label}
       </label>
@@ -391,7 +391,7 @@ function Field({
         <motion.p
           initial={{ opacity: 0, y: -4 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-red-400 text-xs"
+          className="text-red-400 text-[10px] md:text-xs"
         >
           {error}
         </motion.p>
@@ -412,7 +412,7 @@ function LoadingSpinner() {
 /* ── Style helpers ──────────────────────────────────────────────────────────── */
 function inputCls(hasError: boolean) {
   return [
-    'w-full rounded-xl px-4 py-3 text-sm text-white placeholder-white/25 outline-none',
+    'w-full rounded-xl px-3 md:px-4 py-2.5 md:py-3 text-xs md:text-sm text-white placeholder-white/25 outline-none',
     'transition-all duration-200 font-light',
     hasError
       ? 'border border-red-500/60 bg-red-500/10 focus:border-red-400'
