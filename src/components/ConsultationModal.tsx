@@ -138,7 +138,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                 maxHeight: 'calc(100vh - 64px)',
               }}
             >
-              <div className="overflow-y-auto max-h-[calc(100vh-64px)]">
+              <div className="overflow-y-auto max-h-[calc(100vh-64px)] scrollbar-hide">
               {/* Glow accent top */}
               <div
                 className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px pointer-events-none"
