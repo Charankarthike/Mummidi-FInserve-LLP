@@ -116,7 +116,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 overflow-y-auto"
             style={{ background: 'rgba(5, 12, 30, 0.85)', backdropFilter: 'blur(8px)' }}
             onClick={handleClose}
           >
@@ -128,18 +128,20 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
               exit={{ opacity: 0, scale: 0.94, y: 16 }}
               transition={{ duration: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
               onClick={(e) => e.stopPropagation()}
-              className="relative w-full max-w-2xl max-h-[85vh] md:max-h-[90vh] overflow-y-auto rounded-[20px] md:rounded-[28px]"
+              className="relative w-full max-w-2xl my-8 rounded-[20px] md:rounded-[28px] overflow-hidden"
               style={{
                 background:
                   'linear-gradient(160deg, #0D1B35 0%, #0A1628 60%, #08112A 100%)',
                 border: '1px solid rgba(255,255,255,0.12)',
                 boxShadow:
                   '0 40px 80px -20px rgba(0,0,0,0.7), 0 0 0 1px rgba(37,99,235,0.2), inset 0 1px 0 rgba(255,255,255,0.08)',
+                maxHeight: 'calc(100vh - 64px)',
               }}
             >
+              <div className="overflow-y-auto max-h-[calc(100vh-64px)]">
               {/* Glow accent top */}
               <div
-                className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px"
+                className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-px pointer-events-none"
                 style={{
                   background:
                     'linear-gradient(90deg, transparent, rgba(96,165,250,0.6), transparent)',
@@ -360,6 +362,7 @@ export default function ConsultationModal({ isOpen, onClose }: ConsultationModal
                   </motion.div>
                 )}
               </AnimatePresence>
+              </div>
             </motion.div>
           </motion.div>
         </>
