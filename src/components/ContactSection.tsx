@@ -30,7 +30,7 @@ const CONTACT_ITEMS = [
     icon: MapPin,
     label: 'Address',
     value: 'D.No. 26-2-12, A.R. Road, Opp. Sailaja Theatre, Gandhi Nagar, Vijayawada',
-    href: 'https://maps.google.com/?q=Gandhi+Nagar+Vijayawada',
+    href: 'https://maps.app.goo.gl/S2XNEPhkbN4Jnzfi9',
     color: '#0A2540',
   },
 ];
