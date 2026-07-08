@@ -7,6 +7,8 @@ const images = [
   { title: '', url: '/gallery/IMG_1961.jpg' },
   { title: '', url: '/gallery/IMG_1993.jpg' },
   { title: '', url: '/gallery/IMG_2033.jpg' },
+  { title: '', url: '/gallery/IMG-20240503-WA2157.jpg' },
+  { title: '', url: '/gallery/IMG-20240816-WA1950.jpg' },
   { title: '', url: '/gallery/4a328bf5-0e4b-4ec0-9bcb-1383483b680f.jpg' },
   { title: '', url: '/gallery/ebd04740-5bcd-4628-8f11-e06fce9710b5.jpg' },
 ];
