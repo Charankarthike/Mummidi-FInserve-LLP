@@ -2,7 +2,7 @@ import { useState } from 'react';
 import FadeIn from './FadeIn';
 import { ContactButton } from './Buttons';
 import ConsultationModal from './ConsultationModal';
-import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
+import { Phone, Mail, MapPin, MessageCircle, Instagram } from 'lucide-react';
 
 const CONTACT_ITEMS = [
   {
@@ -25,6 +25,13 @@ const CONTACT_ITEMS = [
     value: 'mummidfinserve@gmail.com',
     href: 'mailto:mummidfinserve@gmail.com',
     color: '#E85D3C',
+  },
+  {
+    icon: Instagram,
+    label: 'Instagram',
+    value: '@mummidi_finservellp',
+    href: 'https://www.instagram.com/mummidi_finservellp?igsh=M2tpazlubTJ6czRl&utm_source=qr',
+    color: '#E4405F',
   },
   {
     icon: MapPin,
